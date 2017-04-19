@@ -10,9 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^1.6.2",
-    "jquery": "^3.2.1"
+    "electron-packager": "^8.6.0"
   },
   "dependencies": {
-    "electron-notifications": "^1.0.0"
+    "electron-notifications": "^1.0.0",
+    "jquery": "^3.2.1"
   }
 }
