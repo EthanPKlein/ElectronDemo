@@ -1,16 +1,18 @@
-const {app, BrowserWindow, ipcMain} = require('electron')
+const { app, BrowserWindow, ipcMain, Tray } = require('electron')
 const path = require('path')
 const url = require('url')
+const notifier = require('electron-notifications')
 
 // var alarm = require('./alarm.js');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+let tray
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600});
+  win = new BrowserWindow({ width: 800, height: 600 });
   //win.flashFrame(true);
   win.setClosable(true);
 
@@ -62,7 +64,13 @@ var fruits = ["banana", "apple", "grapes", "orange", "starfruit"];
 
 ipcMain.on('synchronous-message', (event, arg) => {
   win.flashFrame(true);
-  var randomFruit = fruits[Math.floor(Math.random()*fruits.length)];
-  var timeFromServer = `The server suggests ${randomFruit} on ${Date.now()}!`;
-  event.returnValue = timeFromServer;
+  var randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+  var response = `The server suggests <b>${randomFruit}</b> on ${Date.now()}!`;
+
+  notifier.notify('Super Simple Fruit Picker', {
+    icon: 'http://cl.ly/J49B/3951818241085781941.png',
+    message: 'test'
+  });
+
+  event.returnValue = response;
 })

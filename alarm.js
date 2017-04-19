@@ -28,7 +28,7 @@ Alarm.prototype.flashApp = function () {
 };
 
 Alarm.prototype.printResponse = function(response) {
-    $("#serverResponse").html('The server responded with: ' + response);
+    $("#serverResponse").append(response + "<br>");
 };
 
 var alarm = new Alarm();
