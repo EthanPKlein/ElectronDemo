@@ -13,7 +13,6 @@ let tray
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({ width: 800, height: 600 });
-  //win.flashFrame(true);
   win.setClosable(true);
 
   // and load the index.html of the app.
@@ -24,7 +23,7 @@ function createWindow() {
   }))
 
   // Open the DevTools.
-  win.webContents.openDevTools();
+   //win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -60,12 +59,13 @@ app.on('activate', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-var fruits = ["banana", "apple", "grapes", "orange", "starfruit"];
+var fruits = ["banana", "apple", "grapes", "orange", "starfruit", "mango", "papaya", "strawberries"];
 
 ipcMain.on('synchronous-message', (event, arg) => {
   win.flashFrame(true);
   var randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
-  var response = `The server suggests <b>${randomFruit}</b> on ${Date.now()}!`;
+  var date = new Date(Date.now());
+  var response = `The server suggests <b>${randomFruit}</b> on ${date}!`;
 
   notifier.notify('Super Simple Fruit Picker', {
     icon: 'http://cl.ly/J49B/3951818241085781941.png',

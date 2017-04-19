@@ -4,7 +4,7 @@ const $ = require('jquery');
 const currentWindow = require('electron').BrowserWindow;
 
 function Alarm() {
-    this.time = 5;
+    this.time = 6;
 }
 
 Alarm.prototype.turnOn = function () {
@@ -15,7 +15,8 @@ Alarm.prototype.startTimer = function() {
     var self = this;
     setInterval(function () {
         self.time--;
-        $("#timer").html(self.time);
+        var displayTime = self.time > 0 ? self.time : 0;
+        $("#timer").html(displayTime);
         if (self.time === 0) {
             self.flashApp();
         }
@@ -36,10 +37,5 @@ alarm.turnOn();
 alarm.startTimer();
 
 $("#startTimer").click(function() {
-    alarm.time = 5;
+    alarm.time = 6;
 });
-
-// 
-// ipcRenderer.on('asynchronous-reply', (event, arg) => {
-//     console.log(arg); // prints "pong"
-// })
