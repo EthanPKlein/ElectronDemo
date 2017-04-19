@@ -1,12 +1,25 @@
 <html>
 
 <head>
-<title>Super Simple Electron App</title>
+    <title>Super Simple Electron App</title>
 </head>
 
 <body>
     <h1>Super Simple Electron App</h1>
     <p>This is an electron app!</p>
+
+    <p id="timer">The time is...</p>
+    <p id="serverResponse"></p>
+
+    <button id="startTimer">Restart Timer</button>
+
+    <script>
+        if (typeof module === 'object') { window.module = module; module = undefined; }
+    </script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script src="alarm.js"></script>
+
 </body>
 
 </html>
