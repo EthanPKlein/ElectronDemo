@@ -1,0 +1,24 @@
+.timer {
+    color: red;
+    font-size: 30px;
+    font-style: 
+}
+
+h1 {
+    color: darkviolet;
+}
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-align: center;
+    background-image: url("assets/fruit.jpeg");
+    background-size: 100% 100%;
+    background-color: #cccccc;
+}
+
+button {
+    font-size: 15px;
+    background-color: yellow;
+    border-radius: 5px;
+    padding: 10px;
+}

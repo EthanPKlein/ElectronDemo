@@ -6,12 +6,13 @@
 
 <body>
     <h1>Super Simple Electron Fruit Suggester</h1>
-    <p>Want fruit?  Can't decide which kind?  Let this app decide!  But you don't want to get too fat, so you have to wait at least <b>5 whole seconds</b> before your next suggestion!  What a good idea, right?</p>
+    <p>Want fruit? Can't decide which kind? Let this app decide! But you don't want to get too fat, so you have to wait at least
+        <b>5 whole seconds</b> before your next suggestion! What a good idea, right?</p>
 
-    <p id="timer">Suggestion in...</p>
+    <p id="timer" class="timer">Suggestion in...</p>
     <p id="serverResponse"></p>
 
-    <button id="startTimer">MOAR FRUIT!!!11</button>
+    <button id="startTimer"><b>MOAR FRUIT!!!11</b></button>
 
     <script>
         if (typeof module === 'object') { window.module = module; module = undefined; }
@@ -19,6 +20,7 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
     <script src="alarm.js"></script>
+    <link rel="stylesheet" href="style.css">
 
 </body>
 
