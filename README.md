@@ -15,6 +15,6 @@ electron .
 
 To build releases for Windows:
 ```
-electron .
+electron-packager .
 ```
 
